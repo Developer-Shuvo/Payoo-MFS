@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payoo</title>
+    <!-- Daisy UI CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <!-- TailWind CSS -->
+    <link rel="stylesheet" href="./tailwind.config.js">
+</head>
+
+<body class="">
+
+    <!-- Main Section -->
+    <main class="justify-center flex mt-4">
+        <div class="mockup-phone">
+            <div class="mockup-phone-camera"></div>
+            <div class="mockup-phone-display text-white grid place-content-center">
+                <!--<<< login section >>> -->
+                <div class="hero bg-base-200 min-h-screen w-100">
+                    <div class="hero-content flex-col lg:flex-row-reverse ">
+
+                        <div class="card bg-base-200 w-full max-w-sm shrink-0 shadow-2xl">
+                            <div class="card-body">
+                                <fieldset class="fieldset">
+                                    <label class="label">Phone Number</label>
+                                    <input type="number" class="input text-black" placeholder="Phone Number" />
+                                    <label class="label">Pin</label>
+                                    <input type="password" class="input text-black" placeholder="Pin Number" />
+                                    <div><a class="link link-hover">Forgot password?</a></div>
+                                    <button class="btn btn-neutral mt-4">Login</button>
+                                </fieldset>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+</body>
+
+</html>
