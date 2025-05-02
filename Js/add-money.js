@@ -2,5 +2,10 @@
 
 // / step: 1 Add money to the account
 document.getElementById('btn-add-money').addEventListener('click', function() {
-    console.log('add money button clicked');
+    event.preventDefault();
+
+    // get value form the input field
+    const selectBank = document.getElementById('input-select-bank').value;
+    console.log(selectBank);
+
 })
