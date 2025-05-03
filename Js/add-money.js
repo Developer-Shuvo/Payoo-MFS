@@ -57,7 +57,6 @@ document.getElementById('btn-add-money').addEventListener('click', function() {
         const balance = document.getElementById('account-balance').innerText;
         console.log(balance);
 
-
         // add addMoney input with balance
         const addMoneyNumber = parseFloat(amount);
         const balanceNumber = parseFloat(balance);
@@ -67,12 +66,8 @@ document.getElementById('btn-add-money').addEventListener('click', function() {
         // update balance
         document.getElementById('account-balance').innerText = newBalance;
 
-
-
-
-
     } else {
-        alert('wrong Password');
+        alert('Something wrong !\nEnter Correct information');
     }
 
 
