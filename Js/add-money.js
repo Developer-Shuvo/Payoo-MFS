@@ -16,6 +16,10 @@ document.getElementById('btn-add-money').addEventListener('click', function() {
     //get Bank account number from the input field
     const accountNumber = document.getElementById('input-account-number').value;
     console.log(accountNumber);
+
+
+
+
     // function checkAccountNumber() {
     //     const accountNumber = document.getElementById('input-account-number').value.trim();
 
