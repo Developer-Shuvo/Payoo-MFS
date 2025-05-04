@@ -37,8 +37,6 @@
             <div class="grid text-white mockup-phone-display place-content-start">
                 <div class="min-h-screen hero items-start bg-base-200 w-[392px] pt-10">
                     <div class="flex-col hero-content w-[100%]">
-
-
                         <!-------------   Available Balance section    -------------->
                         <section class="flex items-center justify-between gap-1 w-[100%]">
                             <!-- logo -->
@@ -56,7 +54,9 @@
                                 <!-- text -->
                                 <div><img src="./images/icons/Group.svg" alt="" /></div>
                                 <div class="">
-                                    <div class="justify-start text-black stat-value">500$</div>
+                                    <div id="balance" class="justify-start text-black stat-value">
+                                        500$
+                                    </div>
                                     <div class="font-semibold stat-title">
                                         Available Balance
                                     </div>
@@ -66,25 +66,48 @@
                             <!------------log out section--------------->
 
                             <button class="flex items-center gap-2 px-4 py-2 text-sm font-semibold text-gray-800 transition duration-200 border border-gray-300 rounded-lg cursor-pointer svg-color-change hover:bg-blue-600 hover:text-white">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-                                    <g clip-path="url(#clip0_11_2930)">
-                                      <path d="M8.33333 6.66659V4.99992C8.33333 4.55789 8.50892 4.13397 8.82148 3.82141C9.13404 3.50885 9.55797 3.33325 9.99999 3.33325H15.8333C16.2754 3.33325 16.6993 3.50885 17.0118 3.82141C17.3244 4.13397 17.5 4.55789 17.5 4.99992V14.9999C17.5 15.4419 17.3244 15.8659 17.0118 16.1784C16.6993 16.491 16.2754 16.6666 15.8333 16.6666H9.99999C9.55797 16.6666 9.13404 16.491 8.82148 16.1784C8.50892 15.8659 8.33333 15.4419 8.33333 14.9999V13.3333" stroke="#666768" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                      <path d="M12.5 10H2.5L5 7.5" stroke="#666768" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                      <path d="M5 12.5L2.5 10" stroke="#666768" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                    </g>
-                                    <defs>
-                                      <clipPath id="clip0_11_2930">
-                                        <rect width="20" height="20" fill="white"/>
-                                      </clipPath>
-                                    </defs>
-                                  </svg>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="20"
+                    height="20"
+                    viewBox="0 0 20 20"
+                    fill="none"
+                  >
+                    <g clip-path="url(#clip0_11_2930)">
+                      <path
+                        d="M8.33333 6.66659V4.99992C8.33333 4.55789 8.50892 4.13397 8.82148 3.82141C9.13404 3.50885 9.55797 3.33325 9.99999 3.33325H15.8333C16.2754 3.33325 16.6993 3.50885 17.0118 3.82141C17.3244 4.13397 17.5 4.55789 17.5 4.99992V14.9999C17.5 15.4419 17.3244 15.8659 17.0118 16.1784C16.6993 16.491 16.2754 16.6666 15.8333 16.6666H9.99999C9.55797 16.6666 9.13404 16.491 8.82148 16.1784C8.50892 15.8659 8.33333 15.4419 8.33333 14.9999V13.3333"
+                        stroke="#666768"
+                        stroke-width="1.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                      <path
+                        d="M12.5 10H2.5L5 7.5"
+                        stroke="#666768"
+                        stroke-width="1.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                      <path
+                        d="M5 12.5L2.5 10"
+                        stroke="#666768"
+                        stroke-width="1.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </g>
+                    <defs>
+                      <clipPath id="clip0_11_2930">
+                        <rect width="20" height="20" fill="white" />
+                      </clipPath>
+                    </defs>
+                  </svg>
                   <span>Log Out</span>
-                          </button>
+                </button>
                         </section>
 
                         <!-----------  line - -------------->
                         <div class="h-[2px] w-full bg-gray-400 ;"></div>
-
 
                         <!------------- Text ------------->
                         <div class="">
@@ -142,46 +165,42 @@
                             </div>
                         </section>
 
-
-                        <!-- ------------- Add Money section ---------------->
+                        <!-- ------------- Transfer Money section ---------------->
                         <section>
-                            <!-- Add Money -->
-                            <h1 class="text-lg font-bold text-black ">Transfer Money</h1>
+                            <!-- Transfer Money -->
+                            <h1 class="text-lg font-bold text-black">Transfer Money</h1>
 
                             <div class="max-w-sm mx-auto mt-2 overflow-hidden bg-white shadow-md rounded-2xl w-80">
-
                                 <div class="px-6 py-4">
                                     <!-- User account number -->
                                     <div class="mb-1">
                                         <label class="block mb-1 font-bold text-gray-700" for="card-number">
-                                            User Account Number
-                                        </label>
-                                        <input class="w-full px-3 py-1 leading-tight text-gray-700 border border-green-700 rounded-full appearance-none bg-teal-50 focus:outline-none focus:shadow-outline" id="input-select-bank" type="text" placeholder="Enter 11 digit number">
+                        User Account Number
+                      </label>
+                                        <input class="w-full px-3 py-1 leading-tight text-gray-700 border border-green-700 rounded-full appearance-none bg-teal-50 focus:outline-none focus:shadow-outline" id="input-account-number" type="text" placeholder="Enter 11 digit number" />
                                     </div>
-                                    <!-- Amount -->
+                                    <!----- Amount ------>
                                     <div class="mb-1">
                                         <label class="block mb-1 font-bold text-gray-700" for="expiration-date">
-                                          Amount
-                                        </label>
-                                        <input class="w-full px-3 py-1 leading-tight text-gray-700 border border-green-700 rounded-full appearance-none bg-teal-50 focus:outline-none focus:shadow-outline" id="expiration-date" type="number" placeholder="Enter amount to withdraw">
+                        Amount
+                      </label>
+                                        <input class="w-full px-3 py-1 leading-tight text-gray-700 border border-green-700 rounded-full appearance-none bg-teal-50 focus:outline-none focus:shadow-outline" id="input-amount" type="number" placeholder="Enter amount to Transfer" />
                                     </div>
 
                                     <!-- Pin Number -->
                                     <div class="mb-1">
                                         <label class="block mb-1 font-bold text-gray-700" for="cvv">
-                                            Pin Number
-                                        </label>
-                                        <input class="w-full px-3 py-1 leading-tight text-gray-700 border border-green-700 rounded-full appearance-none bg-teal-50 focus:outline-none focus:shadow-outline" type="password" placeholder="Enter 4 digit pin number">
+                        Pin Number
+                      </label>
+                                        <input id="input-pin" class="w-full px-3 py-1 leading-tight text-gray-700 border border-green-700 rounded-full appearance-none bg-teal-50 focus:outline-none focus:shadow-outline" type="password" placeholder="Enter 4 digit pin number" />
                                     </div>
                                     <!-- send now button -->
-                                    <button id="btn-add-money" class="w-full px-4 py-2 mt-3 font-bold text-white bg-blue-500 rounded-full cursor-pointer hover:bg-blue-600">
-                                        Send Now
-                                    </button>
+                                    <button id="btn-transfer-money" class="w-full px-4 py-2 mt-3 font-bold text-white bg-blue-500 rounded-full cursor-pointer hover:bg-blue-600">
+                      Send Now
+                    </button>
                                 </div>
                             </div>
                         </section>
-
-
                     </div>
                 </div>
             </div>
@@ -190,6 +209,7 @@
     <!-- _________________________________________ -->
     <script src="./Js/add-money.js"></script>
     <script src="./Js/home.js"></script>
+    <script src="./Js/tansfer-money.js"></script>
 </body>
 
 </html>
