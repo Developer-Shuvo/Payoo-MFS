@@ -1,50 +1,52 @@
-// // Transactions card clicked and it will take you a add money interface.
-// document.getElementById('transfer-money-card').addEventListener('click', function(event) {
-//     window.location.href = '../transfer-money.html';
-//     // prevent page reload after form submit
-//     event.preventDefault();
-// })
-
-
-// _______________________________________________________________________________________
-document.getElementById('btn-transfer-money').addEventListener('click', function(event) {
+document
+  .getElementById("btn-transfer-money")
+  .addEventListener("click", function (event) {
     event.preventDefault();
 
-
-    // user account number value 
-    const userAccountNumber = document.getElementById('input-account-number').value;
+    // user account number
+    const userAccountNumber = document
+      .getElementById("input-account-number")
+      .value.trim();
     console.log(userAccountNumber);
 
-    // how much amount add   $$$$$   $$$$$$$
-    const amount = document.getElementById('input-amount').value;
+    // transfer amount
+    const amount = document.getElementById("input-amount").value.trim();
     console.log(amount);
 
-    // pin number taken
-    const pin = document.getElementById('input-pin').value;
+    // pin
+    const pin = document.getElementById("input-pin").value.trim();
     console.log(pin);
 
-    // ______________________________________________________________________________
+    // get saved pin from localStorage
+    const savedPin = localStorage.getItem("userPin");
 
-    // verify pin number
+    if (pin === savedPin) {
+      // get current balance (remove $ sign if exists)
+      let balanceText = document
+        .getElementById("balance")
+        .innerText.replace("$", "")
+        .trim();
+      let balanceNumber = parseFloat(balanceText);
 
-    if (pin === '1234') {
-        console.log('Congratulations Your Transfer Money successfully Complete');
-        // get the current balance
-        const balance = document.getElementById('balance').innerText;
-        console.log(balance);
+      let amountNumber = parseFloat(amount);
 
-        // subtract cashOut input from balance
-        const amountNumber = parseFloat(amount);
-        const balanceNumber = parseFloat(balance);
-        const newBalance = balanceNumber - amountNumber;
-        console.log(newBalance);
+      if (isNaN(balanceNumber) || isNaN(amountNumber)) {
+        alert("❌ Invalid amount or balance!");
+        return;
+      }
 
-        // update balance
-        document.getElementById('balance').innerText = newBalance;
+      // check balance
+      if (amountNumber > balanceNumber) {
+        alert("❌ Insufficient balance!");
+        return;
+      }
 
+      // update balance
+      let newBalance = balanceNumber - amountNumber;
+      document.getElementById("balance").innerText = newBalance + "$";
+
+      alert("✅ Money transferred successfully!");
     } else {
-        alert('Something wrong !\nEnter Correct information');
+      alert("❌ Wrong PIN! Please enter the correct 4-digit PIN.");
     }
-
-
-});
+  });
