@@ -1,79 +1,34 @@
-// Add money page work + add money button work here              <-----------------
-
 // / step: 1 Add money to the account
-document.getElementById('btn-add-money').addEventListener('click', function() {
+document.getElementById('btn-add-money').addEventListener('click', function (event) {
     event.preventDefault();
 
-    // get Bank Name from the input field
-    const selectBank = document.getElementById('input-select-bank').value;
-    console.log(selectBank);
+    // Get Input Values
+    const selectBank = document.getElementById('input-select-bank').value.trim();
+    const accountNumber = document.getElementById('input-account-number').value.trim();
+    const amount = document.getElementById('input-amount').value.trim();
+    const pin = document.getElementById('input-pin').value.trim();
 
+    // Get saved PIN from localStorage (যেটা লগইন এর সময় সেভ হয়েছিলো)
+    const savedPin = localStorage.getItem("userPin");
 
-
-
-
-
-    //get Bank account number from the input field
-    const accountNumber = document.getElementById('input-account-number').value;
-    console.log(accountNumber);
-
-
-
-
-    // function checkAccountNumber() {
-    //     const accountNumber = document.getElementById('input-account-number').value.trim();
-
-    //     // Check if input is exactly 11 digits (all numbers)
-    //     const isValid = /^\d{11}$/.test(accountNumber);
-
-    //     if (!isValid) {
-    //         alert('Please enter a valid 11-digit bank account number.');
-    //     } else {
-    //         alert('Account number accepted!');
-    //         // You can proceed with form submission or other logic here
-    //     }
-    // }
-
-    // Call the checkAccountNumber function
-    // checkAccountNumber();
-
-
-
-
-
-
-
-
-    // get amount to add from the input field
-    const amount = document.getElementById('input-amount').value;
-    console.log(amount);
-
-    // get pin number from the input field
-    const pin = document.getElementById('input-pin').value;
-
-
-
-    // verify pin number
-
-    if (pin === '1234') {
-        console.log('pin number is correct and you can add money now');
-        // get the current balance
-        const balance = document.getElementById('account-balance').innerText;
-        console.log(balance);
-
-        // add addMoney input with balance
-        const addMoneyNumber = parseFloat(amount);
-        const balanceNumber = parseFloat(balance);
-        const newBalance = addMoneyNumber + balanceNumber;
-        console.log(newBalance);
-
-        // update balance
-        document.getElementById('account-balance').innerText = newBalance;
-
-    } else {
-        alert('Something wrong !\nEnter Correct information');
+    // Validation
+    if (selectBank === "" || accountNumber === "" || amount === "" || pin === "") {
+        alert("Please fill all fields!");
+        return;
     }
 
+    if (pin === savedPin) {
+        // Get the current balance
+        const balanceElement = document.getElementById('account-balance');
+        const balance = parseFloat(balanceElement.innerText);
 
+        // Update balance
+        const addMoneyNumber = parseFloat(amount);
+        const newBalance = balance + addMoneyNumber;
 
+        balanceElement.innerText = newBalance;
+        alert("✅ Money added successfully!");
+    } else {
+        alert("❌ Wrong PIN! Please enter the correct 4-digit PIN.");
+    }
 });

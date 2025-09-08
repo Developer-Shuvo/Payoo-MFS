@@ -1,45 +1,37 @@
-// Add money button clicked and it will take you a add money interface.
+// Add money button clicked → Go to add-money.html
 document
-    .getElementById("add-money-card")
-    .addEventListener("click", function() {
-        window.location.href = "../addMoney.html";
-        // prevent page reload after form submit
-        event.preventDefault();
-    });
+  .getElementById("add-money-card")
+  .addEventListener("click", function () {
+    window.location.href = "./addMoney.html"; // ✅ Correct file name & path
+  });
 
-// cash out button clicked and it will take you a add money interface.
-document.getElementById("cash-out-card").addEventListener("click", function() {
-    window.location.href = "../cash-out.html";
-    // prevent page reload after form submit
-    event.preventDefault();
+// Cash out button clicked → Go to cash-out.html
+document.getElementById("cash-out-card").addEventListener("click", function () {
+  window.location.href = "./cash-out.html";
 });
-// Transfer money button clicked and it will take you a add money interface.
+
+// Transfer money button clicked → Go to transfer-money.html
 document
-    .getElementById("transfer-money-card")
-    .addEventListener("click", function() {
-        window.location.href = "../transfer-money.html";
-        // prevent page reload after form submit
-        event.preventDefault();
-    });
-// get bonus button clicked and it will take you a add money interface.
+  .getElementById("transfer-money-card")
+  .addEventListener("click", function () {
+    window.location.href = "./transfer-money.html";
+  });
+
+// Get bonus button clicked → Go to get-bonus.html
 document
-    .getElementById("get-bonus-card")
-    .addEventListener("click", function() {
-        window.location.href = "../get-bonus.html";
-        // prevent page reload after form submit
-        event.preventDefault();
-    });
-// pay bill button clicked and it will take you a add money interface.
-document.getElementById("pay-bill-card").addEventListener("click", function() {
-    window.location.href = "../pay-bill.html";
-    // prevent page reload after form submit
-    event.preventDefault();
+  .getElementById("get-bonus-card")
+  .addEventListener("click", function () {
+    window.location.href = "./get-bonus.html";
+  });
+
+// Pay bill button clicked → Go to pay-bill.html
+document.getElementById("pay-bill-card").addEventListener("click", function () {
+  window.location.href = "./pay-bill.html";
 });
-// transaction button clicked and it will take you a add money interface.
+
+// Transaction history button clicked → Go to transaction-history.html
 document
-    .getElementById("transactions-card")
-    .addEventListener("click", function() {
-        window.location.href = "../transaction-history.html";
-        // prevent page reload after form submit
-        event.preventDefault();
-    });
+  .getElementById("transactions-card")
+  .addEventListener("click", function () {
+    window.location.href = "./transaction-history.html";
+  });
