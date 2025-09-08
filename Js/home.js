@@ -2,7 +2,7 @@
 document
   .getElementById("add-money-card")
   .addEventListener("click", function () {
-    window.location.href = "./addMoney.html"; // ✅ Correct file name & path
+    window.location.href = "./addMoney.html"; // 
   });
 
 // Cash out button clicked → Go to cash-out.html
