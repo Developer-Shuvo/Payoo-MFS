@@ -9,6 +9,8 @@ document.getElementById("btn-get-bonus").addEventListener("click", function (eve
     const validCoupons = {
         "BONUS100": 100,
         "BONUS200": 200,
+        "BONUS300": 300,
+        "BONUS400": 400,
         "WELCOME500": 500,
     };
 

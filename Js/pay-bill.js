@@ -1,17 +1,20 @@
-// Pay Bill card clicked → redirect to pay-bill.html
-document.getElementById('pay-bill-card').addEventListener('click', function (event) {
-    event.preventDefault(); // reload আটকানো হলো
+// *** Pay Bill Card ***
+document
+  .getElementById("pay-bill-card")
+  .addEventListener("click", function (event) {
+    event.preventDefault();
 
-    // user login pin localStorage থেকে নাও
+    // ask user pin
+    const pin = prompt("Please enter your 4-digit PIN to continue:").trim();
+    console.log(pin);
+
+    // get saved pin from localStorage
     const savedPin = localStorage.getItem("userPin");
 
-    // এখন pin চাইবে
-    const enteredPin = prompt("Please enter your 4-digit PIN to continue:");
-
-    if (enteredPin === savedPin) {
-        // সঠিক হলে redirect
-        window.location.href = '../pay-bill.html';
+    if (pin === savedPin) {
+      // redirect to pay-bill.html
+      window.location.href = "../pay-bill.html";
     } else {
-        alert("❌ Wrong PIN! Access denied.");
+      alert("❌ Wrong PIN! Please enter the correct 4-digit PIN.");
     }
-});
+  });
